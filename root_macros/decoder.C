@@ -32,8 +32,8 @@ int decoder(TString filename = "data"){
     Short_t buf2b;
     Int_t   buf4b;
 
-    Char_t header[4];
-
+    Char_t header[64];
+    
 
     // variable for header
     UChar_t fileHeader[4];
@@ -104,11 +104,46 @@ int decoder(TString filename = "data"){
 
 
     //Read Events
-
     ULong64_t ievents = 0;
 
-    file.read((char*) &header, 4);
+    //Header check
+    int index=0;
     while(true){
+    //for(int i=0;i<20;i++){
+      file.read((char*) &buf1b, 1);
+      header[index]=buf1b;
+      //cout << buf1b;
+      index++;
+      if(buf1b=='9'){
+	for(int i=0;i<5;i++){//read 00000
+	  file.read((char*) &buf1b, 1);
+	  header[index]=buf1b;
+	  index++;
+	}
+	break;
+      }
+    }
+
+    for(int i=0;i<5;i++){
+      file.read((char*) &buf1b, 1);
+      header[index]=buf1b;
+      if(buf1b==' ')break;//end of buffer
+      index++;
+    }
+    cout<<" Header("<<index<<"bytes):";
+    for(int i=0;i<index;i++){
+      cout<<header[i];
+    }
+    cout<<endl;
+
+
+    for(int i=0;i<400;i++){
+      file.read((char*) &buf1b, 1);
+      cout<<hex<<"0x"<<buf1b<<" ";
+    }
+while(0){
+    //    while(true){
+    //while(ievents<1){
         if(ievents % 10000 == 0) cout << ievents << endl;
 
         if(header[0]=='D' && header[1]=='R' && header[2]=='S'){
