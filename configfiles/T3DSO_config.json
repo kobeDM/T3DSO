@@ -5,13 +5,15 @@
 	    "port":5024,
 	    "SN": "T0101C23480679",
 	    "_comment for SN":"SN",
-	    "TDIV": "500NS",
+	    "TDIV": "500nS",
 	    "_comment for TDIV": "time scale",
 	    "TRDL": "-2US",
 	    "_comment for TRDL": "trigger delay",
-	    "TRLV": "500MV",
-	    "_comment for TRLV":"trigger level",
-	    "TRSE":"EDGE,SR,C1",
+	    "TRLV": "-20MV",
+	    "_comment for TRLV":"trigger level",	    
+	    "TRSC":"C1",
+	    "_comment for TRIG_SOURCE":"trigger source [C1, C2, C3, C4]",
+	    "TRSE":"EDGE,SR",
 	    "_comment for TRSE":"trigger settings",
 	    "TRSL": "POS",
 	    "_comment for TRSL":"trigger slope[POS, NEG]"
@@ -21,31 +23,40 @@
 		"active": 1,
 		"detector": "PMT1",
 		"VDIV": "200MV",
-		"_comment for VDIV": "vertical scale"	
+		"_comment for VDIV": "vertical scale",	
+		"OFST": "200mV",
+		"_comment for OFST": "vertical offset"	
 	    },
 	    "CH2": {
-		"active": 0,
+		"active": 1,
 		"detector": "PMT2",
 		"VDIV": "200MV",
-		"_comment for VDIV": "vertical scale"		
+		"_comment for VDIV": "vertical scale",
+		"OFST": "0V",
+		"_comment for OFST(": "vertical offset"	
 	    },
 	    "CH3": {
-		"active": 0,
+		"active": 1,
 		"detector": "PMT3",
 		"VDIV": "1V",
-		"_comment for VDIV": "vertical scale"		
+		"_comment for VDIV": "vertical scale",
+		"OFST": "0V",
+		"_comment for OFST": "vertical offset"	
+		
 	    },
 	    "CH4": {
-		"active": 0,
+		"active": 1,
 		"detector": "PMT4",
 		"VDIV": "1V",
-		"_comment for VDIV": "vertical scale"		
+		"_comment for VDIV": "vertical scale",
+		"OFST": "0V",
+		"_comment for OFST": "vertical offset"	
 	    }
 	}
     },
     "INFLUXDB":{
-	"host":"10.37.0.170",
+	"host":"10.37.0.227",
 	"port":"8086",
-	"database":"miraclue" 
+	"database":"liqcf4" 
     }
 }
