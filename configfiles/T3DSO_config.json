@@ -1,0 +1,51 @@
+{
+    "T3DSO": {
+	"general":{
+	    "IP":"10.37.1.39",
+	    "port":5024,
+	    "SN": "T0101C23480679",
+	    "_comment for SN":"SN",
+	    "TDIV": "500NS",
+	    "_comment for TDIV": "time scale",
+	    "TRDL": "-2US",
+	    "_comment for TRDL": "trigger delay",
+	    "TRLV": "500MV",
+	    "_comment for TRLV":"trigger level",
+	    "TRSE":"EDGE,SR,C1",
+	    "_comment for TRSE":"trigger settings",
+	    "TRSL": "POS",
+	    "_comment for TRSL":"trigger slope[POS, NEG]"
+	},
+	"individual":{
+	    "CH1": {
+		"active": 1,
+		"detector": "PMT1",
+		"VDIV": "200MV",
+		"_comment for VDIV": "vertical scale"	
+	    },
+	    "CH2": {
+		"active": 0,
+		"detector": "PMT2",
+		"VDIV": "200MV",
+		"_comment for VDIV": "vertical scale"		
+	    },
+	    "CH3": {
+		"active": 0,
+		"detector": "PMT3",
+		"VDIV": "1V",
+		"_comment for VDIV": "vertical scale"		
+	    },
+	    "CH4": {
+		"active": 0,
+		"detector": "PMT4",
+		"VDIV": "1V",
+		"_comment for VDIV": "vertical scale"		
+	    }
+	}
+    },
+    "INFLUXDB":{
+	"host":"10.37.0.170",
+	"port":"8086",
+	"database":"miraclue" 
+    }
+}
