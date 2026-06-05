@@ -1,6 +1,7 @@
 # T3DSO
 # TELEDYNE T3DSO1204 reader
-# besed on https://cdn.teledynelecroy.com/files/manuals/tds031000-2000_programming_manual.pdf
+
+besed on https://cdn.teledynelecroy.com/files/manuals/tds031000-2000_programming_manual.pdf
 
 disclaimer
 rate is upto 1cps
