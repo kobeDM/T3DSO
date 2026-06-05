@@ -1,7 +1,7 @@
 {
     "T3DSO": {
 	"general":{
-	    "IP":"10.37.1.39",
+	    "IP":"10.37.1.43",
 	    "port":5024,
 	    "SN": "T0101C23480679",
 	    "_comment for SN":"SN",
@@ -9,13 +9,13 @@
 	    "_comment for TDIV": "time scale",
 	    "TRDL": "-2US",
 	    "_comment for TRDL": "trigger delay",
-	    "TRLV": "-20MV",
-	    "_comment for TRLV":"trigger level",	    
+	    "TRPA":"C1,L,C2,L,C3,X,C4,X,STATE,OR",
+	    "_comment for TRIG_PATTERN":"trigger pattern[[ch,[L,H,X]],ch,[L,H,X]],ch,[L,H,X]],ch,[L,H,X]],STATE,[OR,AND]]",	
 	    "TRSC":"C1",
 	    "_comment for TRIG_SOURCE":"trigger source [C1, C2, C3, C4]",
-	    "TRSE":"EDGE,SR",
-	    "_comment for TRSE":"trigger settings",
-	    "TRSL": "POS",
+	    "TRSE":"PA",
+	    "_comment for TRSE":"trigger settings [PA, EDGE]",
+	    "TRSL": "NEG",
 	    "_comment for TRSL":"trigger slope[POS, NEG]"
 	},
 	"individual":{
@@ -24,33 +24,41 @@
 		"detector": "PMT1",
 		"VDIV": "200MV",
 		"_comment for VDIV": "vertical scale",	
-		"OFST": "200mV",
-		"_comment for OFST": "vertical offset"	
+		"OFST": "600mV",
+		"_comment for OFST": "vertical offset",		
+		"TRLV": "84mV",
+		"_comment for TRLV": "trigger level"	
 	    },
 	    "CH2": {
 		"active": 1,
 		"detector": "PMT2",
 		"VDIV": "200MV",
 		"_comment for VDIV": "vertical scale",
-		"OFST": "0V",
-		"_comment for OFST(": "vertical offset"	
+		"OFST": "200mV",
+		"_comment for OFST(": "vertical offset"	,		
+		"TRLV": "516mV",
+		"_comment for TRLV": "trigger level"
 	    },
 	    "CH3": {
 		"active": 1,
-		"detector": "PMT3",
+		"detector": "reserved",
 		"VDIV": "1V",
 		"_comment for VDIV": "vertical scale",
 		"OFST": "0V",
-		"_comment for OFST": "vertical offset"	
+		"_comment for OFST": "vertical offset",		
+		"TRLV": "-200mV",
+		"_comment for TRLV": "trigger level"	
 		
 	    },
 	    "CH4": {
 		"active": 1,
-		"detector": "PMT4",
+		"detector": "reserved",
 		"VDIV": "1V",
 		"_comment for VDIV": "vertical scale",
 		"OFST": "0V",
-		"_comment for OFST": "vertical offset"	
+		"_comment for OFST": "vertical offset",		
+		"TRLV": "-200mV",
+		"_comment for TRLV": "trigger level"
 	    }
 	}
     },
